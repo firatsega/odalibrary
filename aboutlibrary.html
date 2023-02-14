@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/aboutTHELIBRARY.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <title>ODA-SBS library</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <nav>
+               <ul>
+                   <li><a href="library.html">HOME</a></li>
+               </ul>
+            </nav>
+                
+        </div>
+             
+
+         <div class="myslides">
+            <div class="contents"> 
+                             <h2>contents</h2>
+            
+                         <p>Library slide-show</p> 
+                </div> 
+            <div class="numbertext">1/ 10</div>
+            <img src="images/slide1.jpg" alt="" style="width:100%">
+         </div>   
+          
+         <div class="myslides">
+            <div class="numbertext">2/ 10</div>
+            <img src="images/slide2.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">3/ 10</div>
+            <img src="images/slide3.jpg" alt="" style="width:100%">
+         </div>
+         
+         <div class="myslides">
+            <div class="numbertext">4/ 10</div>
+            <img src="images/slide4.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">5/ 10</div>
+            <img src="images/slide5.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">6/ 10</div>
+            <img src="images/slide7.jpg" alt="" style="width:100%">
+         </div> 
+
+
+         <div class="myslides">
+            <div class="numbertext">7/ 10</div>
+            <img src="images/slide8.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">8/ 10</div>
+            <img src="images/slide9.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">9/ 10</div>
+            <img src="images/slide10.jpg" alt="" style="width:100%">
+         </div> 
+
+         <div class="myslides">
+            <div class="numbertext">10/ 10</div>
+            <img src="images/slide11.jpg" alt="" style="width:100%">
+         </div> 
+         <a class="prev" onclick="plusslides(-1)"><i class="fa-sharp fa-solid fa-chevron-left"></i></a>
+         <a class="next" onclick="plusslides(1)"><i class="fa-sharp fa-solid fa-chevron-right"></i></a>
+         <div class="caption-container">
+            <p id="caption"></p>
+         </div>
+         <div class="row">
+            <div class="column">
+                <img src="images/slide1.jpg" alt="cool scene" class="demo cursor" style="width: 100%" onclick="currentslide(1)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide2.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(2)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide3.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(3)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide4.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(4)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide5.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(5)">
+            </div>
+            
+
+            <div class="column">
+                <img src="images/slide7.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(6)">
+            </div>
+   
+           
+
+            <div class="column">
+                <img src="images/slide8.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(8)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide9.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(9)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide10.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(10)">
+            </div>
+
+            <div class="column">
+                <img src="images/slide11.jpg" alt="" class="demo cursor" style="width: 100%" onclick="currentslide(11)">
+            </div>
+
+         </div>
+ </div>
+
+
+       <script>
+
+                let slideindex = 1;
+                showslides(slideindex);
+
+             function plusslides(n) {
+                   showslides(slideindex += n);
+             }
+              function currentslide(n) {
+                showslides(slideindex = n);
+              }
+             function showslides(n){
+                let i;
+                let slides = document.getElementsByClassName("myslides");
+                let dots = document.getElementsByClassName("demo");
+                let captionText = document.getElementById("caption");
+                if (n > slides.length) {slideindex = 1}
+                if (n <1) {slideindex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++){
+                    dots[i].className= dots[i].className.replace("active", "");
+                }
+                slides[slideindex-1].style.display = "block";
+                dots[slideindex-1].className += "active";
+                captionText.innerHTML = dots[slideindex-1].alt;
+             }
+                
+
+
+
+
+       </script>
+
+
+
+</body>
+</html>
